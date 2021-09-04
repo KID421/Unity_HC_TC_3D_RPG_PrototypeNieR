@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000011695308040}
   - component: {fileID: 33000011149123222}
   - component: {fileID: 23000012931840882}
+  - component: {fileID: 4929429013525163915}
   m_Layer: 0
   m_Name: Hangar_v2_7_gate4
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4929429013525163915
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010518410334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: e5c35000052d84041aac70751eee328e, type: 3}
 --- !u!1 &1000010812122296
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 4000011955032794}
   - component: {fileID: 33000014003885172}
   - component: {fileID: 23000013422727778}
+  - component: {fileID: 700348555291007311}
   m_Layer: 0
   m_Name: Hangar_v2_7_gate3
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &700348555291007311
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010812122296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: e5c35000052d84041aac70751eee328e, type: 3}
 --- !u!1 &1000012281593870
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +203,7 @@ GameObject:
   - component: {fileID: 4000014162100260}
   - component: {fileID: 33000010857997036}
   - component: {fileID: 23000013882898844}
+  - component: {fileID: 4463652664942154157}
   m_Layer: 0
   m_Name: Hangar_v2_7_gate2
   m_TagString: Untagged
@@ -243,6 +274,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4463652664942154157
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012281593870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300010, guid: e5c35000052d84041aac70751eee328e, type: 3}
 --- !u!1 &1000012375230664
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +461,7 @@ GameObject:
   - component: {fileID: 4000012968404420}
   - component: {fileID: 33000012613047822}
   - component: {fileID: 23000012151314832}
+  - component: {fileID: 8509291175257868769}
   m_Layer: 0
   m_Name: Hangar_v2_7_door1
   m_TagString: Untagged
@@ -486,6 +532,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8509291175257868769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012666995862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300014, guid: e5c35000052d84041aac70751eee328e, type: 3}
 --- !u!1 &1000013212466252
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +557,7 @@ GameObject:
   - component: {fileID: 4000013447336630}
   - component: {fileID: 33000014039157224}
   - component: {fileID: 23000010884104158}
+  - component: {fileID: 1878766227182223315}
   m_Layer: 0
   m_Name: Hangar_v2_7_gate1
   m_TagString: Untagged
@@ -567,6 +628,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1878766227182223315
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013212466252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300008, guid: e5c35000052d84041aac70751eee328e, type: 3}
 --- !u!1 &1000013235463752
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +653,7 @@ GameObject:
   - component: {fileID: 4000010806657880}
   - component: {fileID: 33000013096079074}
   - component: {fileID: 23000010947240236}
+  - component: {fileID: 1908389352323084926}
   m_Layer: 0
   m_Name: Hangar_v2_7
   m_TagString: Untagged
@@ -592,7 +668,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013235463752}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -655,3 +731,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1908389352323084926
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013235463752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e5c35000052d84041aac70751eee328e, type: 3}
