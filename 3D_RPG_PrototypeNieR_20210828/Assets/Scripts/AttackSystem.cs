@@ -11,9 +11,13 @@ public class AttackSystem : MonoBehaviour
     public string parAttackPart = "普攻段數";
     public string parAttackGather = "普攻擊氣";
     [Header("連擊間隔等待時間"), Range(0, 2)]
-    public float intervalBetweenAttackPart = 0.2f;
+    public float[] intervalBetweenAttackPart = { 0.5f, 0.5f, 0.7f };
     [Header("集氣時間"), Range(0, 2)]
     public float timeToAttackGather = 1;
+    [Header("攻擊段數"), Range(0, 10)]
+    public int countAttackPartMax = 3;
+
+    public AvatarMask a;
     #endregion
 
     #region 欄位：私人
@@ -21,7 +25,15 @@ public class AttackSystem : MonoBehaviour
     /// <summary>
     /// 紀錄玩家按下左鍵的時間
     /// </summary>
-    private float timer;
+    private float timerAttackGather;
+    /// <summary>
+    /// 連段攻擊使用的計時器
+    /// </summary>
+    private float timerAttackPart;
+    /// <summary>
+    /// 攻擊段數
+    /// </summary>
+    private int countAttackPart;
     #endregion
 
     #region 事件
@@ -50,25 +62,24 @@ public class AttackSystem : MonoBehaviour
     /// </summary>
     private void ClickTime()
     {
-        if (Input.GetKey(KeyCode.Mouse0))               // 按住 左鍵
+        if (Input.GetKey(KeyCode.Mouse0))                           // 按住 左鍵
         {
-            timer += Time.deltaTime;                    // 累加 計時器
+            timerAttackGather += Time.deltaTime;                    // 累加 計時器集氣
+            timerAttackPart += Time.deltaTime;                      // 累加 計時器段數
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))        // 放開 左鍵
+        else if (Input.GetKeyUp(KeyCode.Mouse0))                    // 放開 左鍵
         {
-            if (timer >= timeToAttackGather)            // 如果 計時器 >= 集氣時間
+            if (timerAttackGather >= timeToAttackGather)            // 如果 計時器 >= 集氣時間
             {
                 AttackGather();
             }
-            else                                        // 否則 
+            else                                                    // 否則 
             {
-                print("集氣時間不夠");
+                AttackPart();
             }
 
-            timer = 0;                                  // 計時器 歸零
+            timerAttackGather = 0;                                  // 計時器 歸零
         }
-
-        print("按下左鍵的時間：" + timer);
     }
 
     /// <summary>
@@ -77,6 +88,36 @@ public class AttackSystem : MonoBehaviour
     private void AttackGather()
     {
         ani.SetTrigger(parAttackGather);
+    }
+
+    /// <summary>
+    /// 攻擊段數
+    /// </summary>
+    private void AttackPart()
+    {
+        if (timerAttackPart <= intervalBetweenAttackPart[countAttackPart])                          // 如果 計時器段數 <= 段數間隔
+        {
+            CancelInvoke();                                                                         // 取消 延遲呼叫 避免在攻擊時歸零
+            Invoke("RestoreAttackPartCountToZero", intervalBetweenAttackPart[countAttackPart]);     // 延遲呼叫歸零
+            countAttackPart++;                                                                      // 增加段數
+        }
+        else                                                                                        // 否則
+        {
+            countAttackPart = 0;                                                                    // 段數歸零
+        }
+
+        timerAttackPart = 0;                                                                        // 計時器歸零
+        ani.SetInteger(parAttackPart, countAttackPart);                                             // 更新段數參數
+        if (countAttackPart == countAttackPartMax) countAttackPart = 0;
+    }
+
+    /// <summary>
+    /// 恢復攻擊段數為零
+    /// </summary>
+    private void RestoreAttackPartCountToZero()
+    {
+        countAttackPart = 0;
+        ani.SetInteger(parAttackPart, countAttackPart);
     }
     #endregion
 }
