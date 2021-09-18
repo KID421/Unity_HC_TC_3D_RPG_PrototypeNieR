@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.Rendering;
 
 /// <summary>
 /// 對話系統
@@ -34,6 +33,8 @@ public class DialogueSystem : MonoBehaviour
     public AudioClip soundType;
     [Header("打字音量"), Range(0, 2)]
     public float volume = 1;
+    [Header("任務管理器")]
+    public MissionManager missionManager;
 
     private AudioSource aud;
 
@@ -81,7 +82,11 @@ public class DialogueSystem : MonoBehaviour
             textContent.text = "";                                              // 玩家按下空白鍵後清空對話內容
             goFinishIcon.SetActive(false);                                      // 關閉完成圖示
 
-            if (i == data.diaogueContents.Length - 1) groupDialogue.alpha = 0;  // 如果對話段落已經結束就關閉對話介面
+            if (i == data.diaogueContents.Length - 1)
+            {
+                groupDialogue.alpha = 0;                                        // 如果對話段落已經結束就關閉對話介面
+                missionManager.ChangeStateToMissionning();                      // 跟任務管理器說進入進行中
+            }
         }
     }
 }
