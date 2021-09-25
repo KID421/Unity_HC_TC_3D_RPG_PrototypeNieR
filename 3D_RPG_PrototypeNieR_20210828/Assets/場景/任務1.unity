@@ -437,6 +437,21 @@ MonoBehaviour:
   countAttackPartMax: 3
   v: {fileID: 12981547}
   am: {fileID: 31900000, guid: 023c5bbb0b0b70e47b9577fc1e41c8fa, type: 2}
+--- !u!114 &12981551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12981545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd76b299204e4864e9fc173aa4891b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 200
+  parameterDamage: "\u53D7\u50B7\u89F8\u767C"
+  parameterDead: "\u6B7B\u4EA1\u958B\u95DC"
 --- !u!1001 &24068841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10553,6 +10568,7 @@ MonoBehaviour:
   turn: 2
   areaAttackSize: {x: 1.8, y: 1.5, z: 1.5}
   areaAttackOffset: {x: 0, y: 1.2, z: 1.8}
+  delaySendAttackToTarget: 0.48
 --- !u!1001 &826711430
 PrefabInstance:
   m_ObjectHideFlags: 0
