@@ -1,8 +1,10 @@
+using Invector.vCharacterController;
 using UnityEngine;
 
 /// <summary>
 /// 攻擊系統
 /// 三段攻擊與集氣
+/// 判斷變身前後決定攻擊模式
 /// </summary>
 public class AttackSystem : MonoBehaviour
 {
@@ -16,8 +18,6 @@ public class AttackSystem : MonoBehaviour
     public float timeToAttackGather = 1;
     [Header("攻擊段數"), Range(0, 10)]
     public int countAttackPartMax = 3;
-
-    public AvatarMask a;
     #endregion
 
     #region 欄位：私人
@@ -49,9 +49,18 @@ public class AttackSystem : MonoBehaviour
 
     }
 
+    public vThirdPersonController v;
+    public AvatarMask am;
+
     private void Update()
     {
         ClickTime();
+
+        am.SetHumanoidBodyPartActive(AvatarMaskBodyPart.Root, v.verticalSpeed <= 0.1f);
+        am.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftLeg, v.verticalSpeed <= 0.1f);
+        am.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightLeg, v.verticalSpeed <= 0.1f);
+        am.SetHumanoidBodyPartActive(AvatarMaskBodyPart.LeftFootIK, v.verticalSpeed <= 0.1f);
+        am.SetHumanoidBodyPartActive(AvatarMaskBodyPart.RightFootIK, v.verticalSpeed <= 0.1f);
     }
     #endregion
 
@@ -62,6 +71,20 @@ public class AttackSystem : MonoBehaviour
     /// </summary>
     private void ClickTime()
     {
+        // 變身後，攻擊模式為變身後攻擊
+        // 取得其他腳本資訊的方式 
+        // 1. 尋找物件並取得物件的資料
+        // bool isTransform = GameObject.Find("變身系統").GetComponent<TransformSystem>().isTransform;
+        // 2. 將要取得的資料改為靜態
+        bool isTransform = TransformSystem.isTransform;
+
+        if (isTransform && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            ani.SetTrigger("變身後攻擊");
+            return;
+        }
+
+        // 變身前，攻擊模式為變身前攻擊
         if (Input.GetKey(KeyCode.Mouse0))                           // 按住 左鍵
         {
             timerAttackGather += Time.deltaTime;                    // 累加 計時器集氣

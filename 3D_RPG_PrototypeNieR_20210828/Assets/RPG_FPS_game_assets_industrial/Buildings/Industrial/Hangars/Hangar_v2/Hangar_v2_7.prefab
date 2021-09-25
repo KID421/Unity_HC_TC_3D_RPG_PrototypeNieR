@@ -16,8 +16,8 @@ GameObject:
   m_Name: Hangar_v2_7_gate4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000011695308040
 Transform:
@@ -112,8 +112,8 @@ GameObject:
   m_Name: Hangar_v2_7_gate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000011955032794
 Transform:
@@ -208,8 +208,8 @@ GameObject:
   m_Name: Hangar_v2_7_gate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000014162100260
 Transform:
@@ -466,8 +466,8 @@ GameObject:
   m_Name: Hangar_v2_7_door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000012968404420
 Transform:
@@ -562,8 +562,8 @@ GameObject:
   m_Name: Hangar_v2_7_gate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000013447336630
 Transform:
@@ -658,8 +658,8 @@ GameObject:
   m_Name: Hangar_v2_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4000010806657880
 Transform:
