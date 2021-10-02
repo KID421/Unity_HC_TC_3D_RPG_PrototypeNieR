@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 /// <summary>
@@ -36,7 +37,14 @@ public class DialogueSystem : MonoBehaviour
     [Header("任務管理器")]
     public MissionManager missionManager;
 
+    public static DialogueSystem instance;
+
     private AudioSource aud;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -51,23 +59,23 @@ public class DialogueSystem : MonoBehaviour
     /// </summary>
     private void StartDialogue()
     {
-        StartCoroutine(ShowEveryDialogue());
+        StartCoroutine(ShowEveryDialogue(data.diaogueContents, true, false));
     }
 
     /// <summary>
     /// 顯示每段對話：並在段落之間等待玩家按繼續按鍵
     /// </summary>
-    private IEnumerator ShowEveryDialogue()
+    public IEnumerator ShowEveryDialogue(string[] contents, bool changeToMissionning, bool loadNextScene)
     {
         groupDialogue.alpha = 1;                                                // 顯示對話畫布 - 透明度為 1
         textTalker.text = data.diaogueTalkerName;                               // 更新對話者名稱
         textContent.text = "";                                                  // 對話內容清空
 
-        for (int i = 0; i < data.diaogueContents.Length; i++)                   // 迴圈執行每個段落
+        for (int i = 0; i < contents.Length; i++)                               // 迴圈執行每個段落
         {
-            for (int j = 0; j < data.diaogueContents[i].Length; j++)            // 迴圈執行每個段落內的每一個字
+            for (int j = 0; j < contents[i].Length; j++)                        // 迴圈執行每個段落內的每一個字
             {
-                textContent.text += data.diaogueContents[i][j];                 // 更新對話內容
+                textContent.text += contents[i][j];                             // 更新對話內容
                 aud.PlayOneShot(soundType, volume);                             // 播放音效
                 yield return new WaitForSeconds(interval);                      // 打字間隔
             }
@@ -82,10 +90,13 @@ public class DialogueSystem : MonoBehaviour
             textContent.text = "";                                              // 玩家按下空白鍵後清空對話內容
             goFinishIcon.SetActive(false);                                      // 關閉完成圖示
 
-            if (i == data.diaogueContents.Length - 1)
+            if (i == contents.Length - 1)
             {
-                groupDialogue.alpha = 0;                                        // 如果對話段落已經結束就關閉對話介面
-                missionManager.ChangeStateToMissionning();                      // 跟任務管理器說進入進行中
+                groupDialogue.alpha = 0;                                            // 如果對話段落已經結束就關閉對話介面
+
+                if (changeToMissionning) missionManager.ChangeStateToMissionning(); // 跟任務管理器進入進行中
+
+                if (loadNextScene) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

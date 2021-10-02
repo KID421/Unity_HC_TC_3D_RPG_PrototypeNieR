@@ -323,6 +323,7 @@ MonoBehaviour:
   kcContinute: 323
   soundType: {fileID: 8300000, guid: 252983dd9024ddc45b0202de90562f17, type: 3}
   volume: 1
+  missionManager: {fileID: 0}
 --- !u!82 &1258944302344550948
 AudioSource:
   m_ObjectHideFlags: 0

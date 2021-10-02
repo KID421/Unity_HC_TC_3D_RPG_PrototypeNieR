@@ -174,7 +174,7 @@ public class AttackSystem : MonoBehaviour
             transform.forward * areaAttackOffset[indexAttack].z,
             areaAttackSize[indexAttack] / 2, Quaternion.identity, 1 << 6);      // 更換要攻擊的圖層
 
-        hits[0].GetComponent<DamageSystem>().Damage(attack[indexAttack]);
+        if (hits.Length > 0) hits[0].GetComponent<DamageSystem>().Damage(attack[indexAttack]);
     }
 
     /// <summary>

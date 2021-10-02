@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218a8208073ee6b4590ee25f6d3e6baa, type: 3}
-  m_Name: "\u4EFB\u52D9 1 \u958B\u982D"
+  m_Name: "\u4EFB\u52D9 1"
   m_EditorClassIdentifier: 
   diaogueTalkerName: "\u4EFB\u52D9"
   diaogueContents:
   - "\u4EFB\u52D9\u662F\u5728\u57CE\u88E1\u6BBA\u5149\u6240\u6709\u88AB\u75C5\u6BD2\u611F\u67D3\u7684\u602A\u7269"
   - "\u4E26\u4E14\u6D3B\u8457\u96E2\u958B\u9019\u88E1\uFF01"
+  countNeed: 2
+  diaogueContentsFinish:
+  - "\u4F60\u5DF2\u7D93\u6E05\u9664\u57CE\u88E1\u6240\u6709\u662F\u611F\u67D3\u7684\u602A\u7269\u4E86"
+  - "\u5FEB\u9EDE\u9003\u51FA\u9019\u88E1\uFF01"

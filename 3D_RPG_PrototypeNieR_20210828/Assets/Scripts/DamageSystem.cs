@@ -20,6 +20,8 @@ public class DamageSystem : MonoBehaviour
     public UnityEvent onDamage;
     [Header("死亡事件：死亡之後要處理的行為")]
     public UnityEvent onDead;
+    [Header("死亡後通知任務管理器")]
+    public bool sendToMissionManager;
     #endregion
 
     #region 欄位：私人
@@ -69,6 +71,8 @@ public class DamageSystem : MonoBehaviour
         hp = 0;
         ani.SetBool(parameterDead, true);
         onDead.Invoke();
+
+        if (sendToMissionManager) MissionManager.instance.UpdateMissionCount(1);
     }
     #endregion
 }
